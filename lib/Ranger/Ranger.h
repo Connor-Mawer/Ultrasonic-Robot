@@ -3,17 +3,18 @@
 #include <Arduino.h>
 
 
+typedef enum {
+    LEFT,
+    CENTRE,
+    RIGHT
+} RangeAngle;
+
 typedef struct 
 {
     uint16_t distance;
     RangeAngle angle;
 } vector_t;
 
-enum RangeAngle {
-    LEFT,
-    CENTRE,
-    RIGHT
-};
 
 
 class Ranger

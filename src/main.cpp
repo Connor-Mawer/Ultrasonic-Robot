@@ -1,9 +1,12 @@
 #include <Arduino.h>
 #include <Motors.h>
 #include <Ranger.h>
-
+#include <MotorPins.h>
 Motors motors;
-enum state = {IDLE, TURNING, MOVING};
+Ranger ranger;
+
+typedef enum {IDLE, TURNING, MOVING} State;
+State state;
 
 void setup() 
 {
@@ -21,7 +24,7 @@ void loop()
         // we're idle check for new direction, take measurement and start turning.
         case IDLE:
         {
-            vector_t range = ranger.measure(CENTRE);
+            vector_t range = ranger.measure();
             switch(range.angle)
             {
                 case LEFT :
