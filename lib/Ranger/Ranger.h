@@ -1,6 +1,10 @@
-// #ifndef RANGER_H
+#ifndef RANGER_H
 #define RANGER_H
 #include <Arduino.h>
+
+
+#define echoPin A0
+#define trigPin A1 
 
 
 typedef enum {

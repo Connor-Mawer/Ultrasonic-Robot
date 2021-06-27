@@ -1,18 +1,36 @@
 #include <Ranger.h>
-#include <Server.h>
 #include <Servo.h>
-
+#include <Distance.cpp>
 
 Servo myservo;
 
-
-
-void Test_FDistance()
+void Test_Distance()
 {
-    
-    
-}
 
+    void Test_FDistance()
+    {
+        myservo.write(90); // This is an angle 
+        void Distance ()
+    }
+
+    void Test_RDistance()
+    {
+        myservo.write(177);
+        void Distance()
+    }
+
+    void Test_FDistance()
+    {
+        myservo.write(90); // This is an angle 
+        void Distance ()
+    }
+
+    void Test_LDistance()
+    {
+        myservo.write(5); // This is an angle 
+        void Distance ()
+    }
+}
 
 
 
