@@ -1,4 +1,6 @@
 #include <Ranger.h>
+#include <Server.h>
+
 
 
 Ranger::Ranger(void) {}
