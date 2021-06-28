@@ -7,29 +7,29 @@
 #define trigPin A1 
 
 
-typedef enum {
-    LEFT,
-    CENTRE,
-    RIGHT
-} RangeAngle;
+// typedef enum {
+//     LEFT,
+//     CENTRE,
+//     RIGHT
+// } RangeAngle;
 
-typedef struct 
-{
-    uint16_t distance;
-    RangeAngle angle;
-} vector_t;
-
-
-
-class Ranger
-{
-    private:
+// typedef struct 
+// {
+//     uint16_t distance;
+//     RangeAngle angle;
+// } vector_t;
 
 
-    public:
-        Ranger(void);
 
-        vector_t measure(void);
-};
+// class Ranger
+// {
+//     private:
+
+
+//     public:
+//         Ranger(void);
+
+//         vector_t measure(void);
+// };
 
 #endif

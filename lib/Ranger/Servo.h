@@ -89,7 +89,6 @@
 
 #define INVALID_SERVO         255     // flag indicating an invalid servo index
 
-#define myservo: 5
 
 #if !defined(ARDUINO_ARCH_STM32F4)
 

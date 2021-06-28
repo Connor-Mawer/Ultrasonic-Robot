@@ -1,33 +1,22 @@
 #include <Ranger.h>
 #include <Servo.h>
 #include <Arduino.h>
+#include <Distnace.cpp>
+
+
+Servo myservo;
 
 void setup()
 {
     long duration;
-
     int distance;
-
-    Servo myservo;
+    myservo.attach(5);
 } 
 
 void Test_Turning_Distance()
 {
     myservo.write(90); // This is an angle 
-                
-    delayMicroseconds(30000)
-    digitalWrite(trigPin, LOW);
-    delayMicroseconds(2);
-    digitalWrite(trigPin, HIGH);
-    delayMicroseconds(10);
-    digitalWrite(trigPin, LOW);
-                
-    duration = pulseIn(echoPin, HIGH);
-                
-    distance = duration * 0.34 / 2;  
-
-    //only testing the (forward) distance while turning ie directly infront
-    
+    Distance();
 }
 
 void Test_Moving_Distance()
@@ -36,62 +25,29 @@ void Test_Moving_Distance()
     void Test_FDistance()
     {
         myservo.write(90); // This is an angle 
-        
-        delayMicroseconds(30000)
-        digitalWrite(trigPin, LOW);
-        delayMicroseconds(2);
-        digitalWrite(trigPin, HIGH);
-        delayMicroseconds(10);
-        digitalWrite(trigPin, LOW);
-        
-        duration = pulseIn(echoPin, HIGH);
-        
-        distance = duration * 0.34 / 2;
+        delayMicroseconds(30000);
+        Distance();
     }
 
     void Test_RDistance()
     {
         myservo.write(177);
-        delayMicroseconds(30000)
-        digitalWrite(trigPin, LOW);
-        delayMicroseconds(2);
-        digitalWrite(trigPin, HIGH);
-        delayMicroseconds(10);
-        digitalWrite(trigPin, LOW);
-        
-        duration = pulseIn(echoPin, HIGH);
-        
-        distance = duration * 0.34 / 2;
+        delayMicroseconds(30000);
+        Distance();
     }
 
     void Test_FDistance()
     {
-        myservo.write(90); // This is an angle 
-        delayMicroseconds(30000)
-        digitalWrite(trigPin, LOW);
-        delayMicroseconds(2);
-        digitalWrite(trigPin, HIGH);
-        delayMicroseconds(10);
-        digitalWrite(trigPin, LOW);
-        
-        duration = pulseIn(echoPin, HIGH);
-        
-        distance = duration * 0.34 / 2;
+        myservo.write(90); 
+        delayMicroseconds(30000);
+        Distance();
     }
 
     void Test_LDistance()
     {
         myservo.write(5); // This is an angle 
-        delayMicroseconds(30000)
-        digitalWrite(trigPin, LOW);
-        delayMicroseconds(2);
-        digitalWrite(trigPin, HIGH);
-        delayMicroseconds(10);
-        digitalWrite(trigPin, LOW);
-        
-        duration = pulseIn(echoPin, HIGH);
-        
-        distance = duration * 0.34 / 2;
+        delayMicroseconds(30000);
+        Distance();
     }
 }
 
