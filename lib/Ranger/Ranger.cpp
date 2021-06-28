@@ -46,7 +46,7 @@ void Test_FDistance()
 void Test_RDistance()
   {
     myservo.write(177);
-    delay(250)
+    delay(250);
     Distance();
     distance = RDistance;
   }
@@ -97,7 +97,7 @@ void Test_Moving_Distance()
 
 }
 
-void loop();
+void loop()
 {
   Test_Moving_Distance();
 }

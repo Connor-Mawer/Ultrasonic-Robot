@@ -6,13 +6,12 @@ int pinLF=9;
 int pinRB=10;
 int pinRF=11;
 
-void setup()
+void pins()
 {
     pinMode(pinLB, OUTPUT);
     pinMode(pinLF, OUTPUT);
     pinMode(pinRB, OUTPUT);
     pinMode(pinRF, OUTPUT);
-    delay(250)
 }
 
 void forward()
@@ -21,7 +20,6 @@ void forward()
     digitalWrite(pinRF,HIGH);
     digitalWrite(pinLB,LOW);
     digitalWrite(pinLF,HIGH); 
-    delay(250)
 }
 
 void right()
@@ -51,7 +49,6 @@ void back()
 
 void loop ()
 {
-    Test_Moving_Distance()
+    Test_Moving_Distance();
     delay(250);
-
 }
