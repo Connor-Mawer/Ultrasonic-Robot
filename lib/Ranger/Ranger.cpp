@@ -68,9 +68,31 @@ void Test_Moving_Distance()
 
     Test_RDistance();
 
-    Test_FDistnace();
+    Test_LDistance();
 
-    Test_LDistnace();
+    Test_RDistance();
+
+    if (FDistance > 100)
+    {
+        // Go forward
+    }
+    
+    if (LDistance > RDistance)
+    { 
+        // Turn left 
+    }
+
+    if (RDistance > LDistance)
+    { 
+        // Turn Right
+    }
+
+    else 
+    {
+        // Go back and turn 120 degrees
+    }
+
+
 
 }
 
