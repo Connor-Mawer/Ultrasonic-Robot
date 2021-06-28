@@ -1,4 +1,3 @@
-#include <Ranger.h>
 #include <Servo.h>
 #include <Arduino.h>
 
@@ -10,6 +9,10 @@ int distance; // variable for the distance measurement
 int FDistance;
 int LDistance;
 int RDistance;
+
+int echoPin = A0;
+int trigPin = A1;
+
 
 void setup() 
   {
@@ -92,8 +95,11 @@ void Test_Moving_Distance()
     //     back();
     // }
 
+}
 
-
+void loop();
+{
+  Test_Moving_Distance();
 }
 
 
