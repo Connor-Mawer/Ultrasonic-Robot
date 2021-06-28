@@ -34,7 +34,7 @@ void Distance()
 void Test_FDistance()
   {
     myservo.write(90); // This is an angle 
-    delayMicroseconds(30000);
+    delay(250);
     Distance();
     distance = FDistance;
   }
@@ -43,7 +43,7 @@ void Test_FDistance()
 void Test_RDistance()
   {
     myservo.write(177);
-    delayMicroseconds(30000);
+    delay(250)
     Distance();
     distance = RDistance;
   }
@@ -52,7 +52,7 @@ void Test_RDistance()
 void Test_LDistance()
   {
     myservo.write(5); // This is an angle 
-    delayMicroseconds(30000);
+    delay(250);
     Distance();
     distance = LDistance;
   }
@@ -72,25 +72,25 @@ void Test_Moving_Distance()
 
     Test_RDistance();
 
-    if (FDistance > 100)
-    {
-        // Go forward
-    }
+    // if (FDistance > 100)
+    // {
+    //     forward();
+    // }
     
-    if (LDistance > RDistance)
-    { 
-        // Turn left 
-    }
+    // if (LDistance > RDistance)
+    // { 
+    //     left();
+    // }
 
-    if (RDistance > LDistance)
-    { 
-        // Turn Right
-    }
+    // if (RDistance > LDistance)
+    // { 
+    //     right();
+    // }
 
-    else 
-    {
-        // Go back and turn 120 degrees
-    }
+    // else 
+    // {
+    //     back();
+    // }
 
 
 
