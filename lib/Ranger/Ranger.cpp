@@ -1,5 +1,6 @@
 #include <Servo.h>
 #include <Arduino.h>
+#include <Motors_CM.cpp>
 
 
 
@@ -33,7 +34,7 @@ void Distance()
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW);
     duration = pulseIn(echoPin, HIGH);
-    distance = duration * 0.34 / 2; //Ive converted it to mm by adjusting 0.034 to 0.34
+    distance = duration * 0.034 / 2; // in cm 
   }
 
 void Test_FDistance()
@@ -84,7 +85,7 @@ void Test_Moving_Distance()
     Test_RDistance();
     delay(500);
 
-  if (FDistance > 100)
+  if (FDistance > 10)
   {
      forward();
   }

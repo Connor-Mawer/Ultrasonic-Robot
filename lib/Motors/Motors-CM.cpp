@@ -46,9 +46,3 @@ void back()
     digitalWrite(pinLB,HIGH);
     digitalWrite(pinLF,LOW);
 }
-
-void loop ()
-{
-    Test_Moving_Distance();
-    delay(250);
-}

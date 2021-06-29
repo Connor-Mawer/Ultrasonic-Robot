@@ -1,70 +1,150 @@
 #include <Arduino.h>
-#include <Motors.h>
 #include <Ranger.h>
-#include <MotorPins.h>
+#include <Servo.h>
 
-Motors motors;
-Ranger ranger;
+Servo myservo;
 
-typedef enum {IDLE, TURNING, MOVING} State;
-State state;
 
-void setup() 
+long duration; // variable for the duration of sound wave travel
+int distance; // variable for the distance measurement
+int FDistance;
+int LDistance;
+int RDistance;
+
+int echoPin = A0;
+int trigPin = A1;
+
+int pinLB=6;
+int pinLF=9;
+int pinRB=10;
+int pinRF=11;
+
+void setup()
 {
-    motors.begin();
-    //motors.move(1000);
+  pinMode(trigPin, OUTPUT); 
+  pinMode(echoPin, INPUT); 
+  Serial.begin(9600); 
+  myservo.attach(5);
+}
+void Distance() 
+  {
+
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+    duration = pulseIn(echoPin, HIGH);
+    distance = duration * 0.034 / 2; // in cm 
+  }
+
+void Test_FDistance()
+  {
+    myservo.write(90); // This is an angle 
+    delay(500);
+    Distance();
+    distance = FDistance;
+    delay(500);
+  }
+
+
+void Test_RDistance()
+  {
+    myservo.write(177);
+    delay(500);
+    Distance();
+    distance = RDistance;
+    delay(500);
+  }
+
+
+void Test_LDistance()
+  {
+    myservo.write(5); // This is an angle 
+    delay(500);
+    Distance();
+    distance = LDistance;
+    delay(500);
+  }
+
+void pins()
+{
+    pinMode(pinLB, OUTPUT);
+    pinMode(pinLF, OUTPUT);
+    pinMode(pinRB, OUTPUT);
+    pinMode(pinRF, OUTPUT);
 }
 
-void loop() 
+void forward()
 {
+    digitalWrite(pinRB,LOW);
+    digitalWrite(pinRF,HIGH);
+    digitalWrite(pinLB,LOW);
+    digitalWrite(pinLF,HIGH); 
+}
 
-
-    motors.loop();
-
-    // "state machine"
-    switch(state)
-    {
-        // we're idle check for new direction, take measurement and start turning.
-        case IDLE:
-        {
-            vector_t range = ranger.measure();
-            switch(range.angle)
-            {
-                case LEFT :
-                    motors.turn(45);
-                    state = TURNING;
-                break;
-
-                case CENTRE :
-                    // no turning
-                    state = TURNING;
-                break;
-
-                case RIGHT :
-                    motors.turn(-45);
-                    state = TURNING;
-                break;
-            }
-        }
-        break;
-
-        case TURNING: 
-            if(motors.idle())   // we have finished turning
-            {
-                motors.move(100);
-                state = MOVING;
-            }
-        break;
-
-        case MOVING:
-            if(motors.idle())
-            {
-                state = IDLE;
-            }
-        break;
-    }
+void right()
+{
+    digitalWrite(pinRB,LOW);
+    digitalWrite(pinRF,HIGH);
+    digitalWrite(pinLB,HIGH);
+    digitalWrite(pinLF,LOW); 
     
+}
 
+void left()
+{
+    digitalWrite(pinRB,HIGH);
+    digitalWrite(pinRF,LOW);
+    digitalWrite(pinLB,LOW);
+    digitalWrite(pinLF,HIGH);
+}
 
+void back()
+{
+    digitalWrite(pinRB,HIGH);
+    digitalWrite(pinRF,LOW);
+    digitalWrite(pinLB,HIGH);
+    digitalWrite(pinLF,LOW);
+}
+
+void Test_Moving_Distance()
+{
+    Test_FDistance();
+    delay(500);
+
+    Test_RDistance();
+    delay(500);
+
+    Test_LDistance();
+    delay(500);
+
+    Test_RDistance();
+    delay(500);
+
+  if (FDistance > 10)
+  {
+    forward();
+  }
     
+  if (LDistance > RDistance)
+  { 
+    left();
+  }
+
+  if (RDistance > LDistance)
+  { 
+    right();
+  }
+
+   else 
+  {
+    back();
+  }
+
+}
+
+void loop()
+{
+    Test_Moving_Distance();
 }
