@@ -1,6 +1,8 @@
 #include <Servo.h>
 #include <Arduino.h>
 
+
+
 Servo myservo;
 
 
@@ -82,33 +84,27 @@ void Test_Moving_Distance()
     Test_RDistance();
     delay(500);
 
-    // if (FDistance > 100)
-    // {
-    //     forward();
-    // }
+  if (FDistance > 100)
+  {
+     forward();
+  }
     
-    // if (LDistance > RDistance)
-    // { 
-    //     left();
-    // }
+  if (LDistance > RDistance)
+  { 
+    left();
+  }
 
-    // if (RDistance > LDistance)
-    // { 
-    //     right();
-    // }
+  if (RDistance > LDistance)
+  { 
+    right();
+  }
 
-    // else 
-    // {
-    //     back();
-    // }
+   else 
+  {
+    back();
+  }
 
 }
-
-void loop()
-{
-  Test_Moving_Distance();
-}
-
 
 
 
