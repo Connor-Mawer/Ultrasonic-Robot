@@ -28,7 +28,6 @@ void setup()
 }
 void Distance() 
   {
-
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
     digitalWrite(trigPin, HIGH);
@@ -146,5 +145,6 @@ void Test_Moving_Distance()
 
 void loop()
 {
-    Test_Moving_Distance();
+  forward();
+  Test_Moving_Distance();
 }
