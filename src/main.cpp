@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <Ranger.h>
+
 #include <Servo.h>
 
 Servo myservo;
@@ -146,5 +146,9 @@ void Test_Moving_Distance()
 void loop()
 {
   forward();
-  Test_Moving_Distance();
+  Test_FDistance;
+  if (FDistance < 10);
+  {
+    Test_Moving_Distance();
+  }
 }
