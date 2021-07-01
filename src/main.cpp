@@ -1,10 +1,13 @@
 #include <Arduino.h>
 #include <Servo.h>
-#include <Ranger.cpp>
-#include <Motors-CM.cpp>
+#include <ranger.h>
+#include <motors.h>
 
 
-void setup();
+void setup()
+{
+  ranger_begin();
+}
 
 
 void loop()

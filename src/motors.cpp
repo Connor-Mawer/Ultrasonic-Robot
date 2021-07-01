@@ -1,10 +1,5 @@
-#include <Arduino.h>
 
-
-int pinLB=6;
-int pinLF=9;
-int pinRB=10;
-int pinRF=11;
+#include <motors.h>
 
 void pins()
 {

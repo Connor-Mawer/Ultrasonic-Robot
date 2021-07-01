@@ -1,28 +1,15 @@
-#include <Servo.h>
-#include <Arduino.h>
+#include <ranger.h>
 
 
 
-Servo myservo;
 
-
-long duration; // variable for the duration of sound wave travel
-int distance; // variable for the distance measurement
-int FDistance;
-int LDistance;
-int RDistance;
-
-int echoPin = A0;
-int trigPin = A1;
-
-
-void setup() 
-  {
+void ranger_begin() 
+{
   pinMode(trigPin, OUTPUT); 
   pinMode(echoPin, INPUT); 
   Serial.begin(9600); 
   myservo.attach(5);
-  }
+}
 
 void Distance() 
   {
@@ -61,6 +48,7 @@ void Test_LDistance()
     Distance();
     distance = LDistance;
   }
+
 
 void Test_Turning_Direction()
 {
