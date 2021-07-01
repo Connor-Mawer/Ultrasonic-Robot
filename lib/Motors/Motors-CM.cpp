@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include <Ranger.cpp>
+
 
 int pinLB=6;
 int pinLF=9;
@@ -49,5 +49,8 @@ void back()
 
 void stop()
 {
-    
+    digitalWrite(pinRB,HIGH);
+    digitalWrite(pinRF,HIGH);
+    digitalWrite(pinLB,HIGH);
+    digitalWrite(pinLF,HIGH);
 }
