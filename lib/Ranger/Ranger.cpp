@@ -62,7 +62,7 @@ void Test_LDistance()
     distance = LDistance;
   }
 
-void Test_Turning_Distance()
+void Test_Turning_Direction()
 {
    
     Test_RDistance();
@@ -72,18 +72,17 @@ void Test_Turning_Distance()
     delay(500);
 
   if (LDistance > RDistance)
-  { 
-    left();
-  }
+    { 
+      left();
+    }
 
-  if (RDistance > LDistance)
-  { 
-    right();
-  }
-
-   else 
-  {
-    back();
-  }
+  else if (RDistance > LDistance)
+    { 
+      right();
+    }
+  else 
+    {
+      back();
+    }
 
 }
