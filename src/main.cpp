@@ -1,26 +1,37 @@
 #include <Arduino.h>
-#include <Servo.h>
-#include <ranger.h>
-#include <motors.h>
+#include <Ranger.h>
+#include <Motors.h>
+
+
+Ranger myRanger;
+Motors myMotor(6, 9, 10, 11);
 
 
 void setup()
 {
-  ranger_begin();
+  myRanger.begin();
+  myMotor.begin();
+  Serial.begin(9600); 
+  
+
 }
 
 
 void loop()
 {
-  Test_FDistance();
-  
-  if (FDistance > 20)
+  long distance = myRanger.getDistance();
+
+  if(1)
   {
-    forward();
+    myRanger.moveServoLeft();
+  }
+  
+  if (distance > 20)
+  {
+    myMotor.forward();
   }
   else
   {
-    stop();
-    Test_Turning_Direction();
+    myMotor.stop();
   }
 }
