@@ -46,3 +46,8 @@ void back()
     digitalWrite(pinLB,HIGH);
     digitalWrite(pinLF,LOW);
 }
+
+void stop()
+{
+    
+}

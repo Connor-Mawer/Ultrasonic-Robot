@@ -1,5 +1,4 @@
 #include <Arduino.h>
-
 #include <Servo.h>
 
 Servo myservo;
@@ -37,6 +36,7 @@ void loop()
 
   else
   {
+    stop();
     Test_Turning_Direction();
   }
 }
