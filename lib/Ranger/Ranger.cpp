@@ -38,57 +38,39 @@ void Distance()
 
 void Test_FDistance()
   {
-    myservo.write(90); // This is an angle 
-    delay(500);
+    myservo.write(90); 
+    delay(250);
     Distance();
     distance = FDistance;
-    delay(500);
   }
 
 
 void Test_RDistance()
   {
     myservo.write(177);
-    delay(500);
+    delay(250);
     Distance();
     distance = RDistance;
-    delay(500);
   }
 
 
 void Test_LDistance()
   {
-    myservo.write(5); // This is an angle 
+    myservo.write(5); 
     delay(500);
     Distance();
     distance = LDistance;
-    delay(500);
   }
 
 void Test_Turning_Distance()
 {
-    Test_FDistance();
-}
-
-void Test_Moving_Distance()
-{
-    Test_FDistance();
-    delay(500);
-
+   
     Test_RDistance();
     delay(500);
 
     Test_LDistance();
     delay(500);
 
-    Test_RDistance();
-    delay(500);
-
-  if (FDistance > 10)
-  {
-     forward();
-  }
-    
   if (LDistance > RDistance)
   { 
     left();
