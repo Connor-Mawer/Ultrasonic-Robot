@@ -1,7 +1,7 @@
-
 #include <motors.h>
 
 void pins()
+
 {
     pinMode(pinLB, OUTPUT);
     pinMode(pinLF, OUTPUT);

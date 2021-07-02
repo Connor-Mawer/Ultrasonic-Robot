@@ -3,17 +3,16 @@
 #include <ranger.h>
 #include <motors.h>
 
-
 void setup()
 {
-  ranger_begin();
+  Range_setup();
+  Serial.begin(9600);
 }
-
 
 void loop()
 {
   Test_FDistance();
-  
+
   if (FDistance > 20)
   {
     forward();

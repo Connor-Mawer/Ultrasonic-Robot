@@ -17,8 +17,8 @@ int RDistance;
 int echoPin = A0;
 int trigPin = A1;
 
+void Range_setup();
 
-void ranger_begin();
 
 void Distance() ;
 void Test_FDistance();
