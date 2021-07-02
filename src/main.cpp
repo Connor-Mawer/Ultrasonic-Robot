@@ -20,11 +20,6 @@ void setup()
 void loop()
 {
   long distance = myRanger.getDistance();
-
-  if(1)
-  {
-    myRanger.moveServoLeft();
-  }
   
   if (distance > 20)
   {
