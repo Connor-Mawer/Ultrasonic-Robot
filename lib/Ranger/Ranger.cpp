@@ -1,8 +1,11 @@
 #include <Ranger.h>
+#include <Servo.h>
 
 
 Ranger::Ranger()
 {}
+ 
+Servo myservo;
 
 void Ranger::begin() 
 {
@@ -28,13 +31,17 @@ long Ranger::getDistance()
   return distance;
 }
 
-// void Test_FDistance()
-//   {
-//     myservo.write(90); 
-//     delay(250);
-//     Distance();
-//     distance = FDistance;
-//   }
+long Ranger::Test_FDistance()
+{
+  long FDistance;
+  long distance;
+  myservo.write(90); 
+  delay(250);
+  getDistance();
+  return distance; 
+  distance = FDistance;
+
+}
 
 
 // void Test_RDistance()

@@ -14,13 +14,10 @@ class Ranger
         Ranger();
         void begin();
         long getDistance();
-
-        void moveServoLeft();
-        
-        // void Test_FDistance();
-        // void Test_RDistance();
-        // void Test_LDistance();
-        // void Test_Turning_Direction();
+        long Test_FDistance();
+        long Test_RDistance();
+        long Test_LDistance();
+        void Test_Turning_Direction();
 };
 
 #endif
