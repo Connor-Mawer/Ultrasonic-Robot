@@ -41,16 +41,24 @@ long Ranger::Test_FDistance()
   return distance; 
   distance = FDistance;
 
+  return FDistance;
+
 }
 
+long Ranger::Test_RDistance()
+{
+  long RDistance;
+  long distance;
+  
+  myservo.write(177);
+  delay(250);
+  getDistance();
+  return distance;
+  distance = RDistance;
 
-// void Test_RDistance()
-//   {
-//     myservo.write(177);
-//     delay(250);
-//     Distance();
-//     distance = RDistance;
-//   }
+  return RDistance;
+
+}
 
 
 // void Test_LDistance()
